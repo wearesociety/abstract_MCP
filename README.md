@@ -37,16 +37,15 @@ npm run test
 INTEGRATION=1 npm run test:int
 ```
 
-### Environment variables (`.env`)
+### Environment variables (`.env`) - Optional for Development
+
+> **Note:** The .env file is optional and only needed for development. For production MCP usage, all variables should be passed by the client.
 
 | Var | Required | Example | Notes |
 |-----|----------|---------|-------|
 | `ABSTRACT_PRIVATE_KEY` | **Yes** | `0xabc…123` | EOA that pays gas – keep secret! |
-| `ABSTRACT_WALLET` | **Yes** | `0xC012…0715` | Same address as above (or another target) |
 | `ABSTRACT_RPC_URL` | No | `https://api.testnet.abs.xyz` | Fallback URL used if empty |
-| `ABSTRACT_ACCOUNT_FACTORY_ADDRESS` | **Yes** | `0x9B947dF68d35281C972511B3E7bC875926F26C1A` | Smart-account factory |
 | `TESTNET` | No | `true` | `true` → use Abstract Testnet, anything else ⇒ Mainnet |
-| `PORT` | No | `3099` | HTTP port for the MCP server |
 
 > **Tip:** Any missing variables are surfaced at runtime with clear errors.
 
@@ -76,8 +75,7 @@ INTEGRATION=1 npm run test:int
       "args": ["/absolute/path/to/society_abstract_mcp/dist/server.js"],
       "env": {
         "ABSTRACT_PRIVATE_KEY": "Your Abstract Private Key",
-        "ABSTRACT_WALLET": "Your Abstract Wallet",
-        "ABSTRACT_RPC_URL": "Your Abstract RPC",
+        "ABSTRACT_RPC_URL": "https://api.testnet.abs.xyz",
         "TESTNET": "true",
         "PORT": "3101",
         "MCP_DISABLE_PINGS": "true"
@@ -96,8 +94,7 @@ INTEGRATION=1 npm run test:int
       "args": ["-y", "society-abstract-mcp@latest"],
       "env": {
         "ABSTRACT_PRIVATE_KEY": "Your Abstract Private Key",
-        "ABSTRACT_WALLET": "Your Abstract Wallet",
-        "ABSTRACT_RPC_URL": "Your Abstract RPC",
+        "ABSTRACT_RPC_URL": "https://api.testnet.abs.xyz",
         "TESTNET": "true",
         "PORT": "3101",
         "MCP_DISABLE_PINGS": "true"

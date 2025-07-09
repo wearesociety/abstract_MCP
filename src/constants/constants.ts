@@ -1,14 +1,23 @@
 import { randomBytes } from "ethers";
-import 'dotenv/config'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore dotenv types resolution conflict under NodeNext
+import * as dotenv from "dotenv";
+
+// Load .env file if it exists (optional for development)
+try {
+    dotenv.config();
+} catch (error) {
+    // .env file is optional - all required variables should come from client
+}
 
 // TODO: Replace with your private key value in the .env file.
-export const PRIVATE_KEY = process.env.PRIVATE_KEY as string;
+export const PRIVATE_KEY = process.env.ABSTRACT_PRIVATE_KEY as string;
 
 export function ensurePrivateKeyIsSet() {
     if (!PRIVATE_KEY) {
-        throw new Error(`🛑 PRIVATE_KEY is not set in .env file
+        throw new Error(`ABSTRACT_PRIVATE_KEY is not set in .env file
         Run "cp .env.example .env" to create a new .env file
-        And add a wallet's private key as the value for PRIVATE_KEY in the .env file.`);
+        And add a wallet's private key as the value for ABSTRACT_PRIVATE_KEY in the .env file.`);
     }
 }
 

@@ -5,7 +5,12 @@ import { privateKeyToAccount } from "viem/accounts";
 // @ts-ignore dotenv types resolution conflict under NodeNext
 import dotenv from "dotenv";
 
-dotenv.config();
+// Load .env file if it exists (optional for development)
+try {
+    dotenv.config();
+} catch (error) {
+    // .env file is optional - all required variables should come from client
+}
 
 // ---------- Chain Definitions ----------
 
@@ -63,7 +68,7 @@ export function getPublicClient(): PublicClient {
 
 export function getWalletClient(): WalletClient {
     if (!_walletClient) {
-        let pk = process.env.ABSTRACT_PRIVATE_KEY ?? process.env.ABSTRACT_PRIVATE_KEY;
+        let pk = process.env.ABSTRACT_PRIVATE_KEY ?? process.env.PRIVATE_KEY;
         if (!pk) {
             throw new Error("ABSTRACT_PRIVATE_KEY env variable is required");
         }

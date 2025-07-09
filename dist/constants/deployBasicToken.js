@@ -39,8 +39,8 @@ const BASIC_TOKEN_ABI = artifactJson.abi;
 const BASIC_TOKEN_BYTECODE = artifactJson.bytecode;
 
 // Environment variables
-const RPC_URL = process.env.RPC_URL || process.env.ABSTRACT_RPC_URL;
-const PRIVATE_KEY = process.env.PRIVATE_KEY || process.env.ABSTRACT_PRIVATE_KEY;
+const RPC_URL = process.env.ABSTRACT_RPC_URL || process.env.RPC_URL;
+const PRIVATE_KEY = process.env.ABSTRACT_PRIVATE_KEY || process.env.PRIVATE_KEY;
 const TOKEN_NAME = process.env.TOKEN_NAME || "DemoToken";
 const TOKEN_SYMBOL = process.env.TOKEN_SYMBOL || "DMT";
 const INITIAL_SUPPLY = process.env.TOKEN_SUPPLY || "1000000000000000000000"; // 1000 tokens (18 decimals)
