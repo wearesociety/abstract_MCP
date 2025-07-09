@@ -128,14 +128,32 @@ Generate a brand-new Externally Owned Account (EOA) with private key and address
 
 ### For MCP Client Integration
 
-Add to your MCP client configuration:
-
+#### Using NPX (Recommended)
 ```jsonc
 {
   "mcpServers": {
     "society-abstract-mcp": {
       "command": "npx",
       "args": ["-y", "society-abstract-mcp@latest"],
+      "env": {
+        "ABSTRACT_PRIVATE_KEY": "your-private-key-here",
+        "ABSTRACT_RPC_URL": "https://api.testnet.abs.xyz",
+        "TESTNET": "true",
+        "PORT": "3101",
+        "MCP_DISABLE_PINGS": "true"
+      }
+    }
+  }
+}
+```
+
+#### Using Local Build
+```jsonc
+{
+  "mcpServers": {
+    "society-abstract-mcp-local": {
+      "command": "node",
+      "args": ["/path/to/your/society_abstract_mcp/dist/server.js"],
       "env": {
         "ABSTRACT_PRIVATE_KEY": "your-private-key-here",
         "ABSTRACT_RPC_URL": "https://api.testnet.abs.xyz",

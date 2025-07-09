@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // src/server.ts
 import { FastMCP as FastMCP6 } from "fastmcp";
 import * as dotenv2 from "dotenv";
@@ -1321,7 +1323,7 @@ try {
 } catch (error) {
   console.log("No .env file found or failed to load - using environment variables from client");
 }
-var server = new FastMCP6({ name: "Society Abstract MCP", version: "0.1.0" });
+var server = new FastMCP6({ name: "Society Abstract MCP", version: "0.1.3" });
 registerAbDeployToken(server);
 registerGetBalance(server);
 registerTransferToken(server);
