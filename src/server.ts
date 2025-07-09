@@ -19,7 +19,7 @@ try {
     console.log("No .env file found or failed to load - using environment variables from client");
 }
 
-export const server = new FastMCP({ name: "Society Abstract MCP", version: "0.1.3" });
+export const server = new FastMCP({ name: "Society Abstract MCP", version: "0.1.4" });
 
 registerAbDeployToken(server); // Deploy MyContract using factory pattern
 registerGetBalance(server);    // Get the balance of an address
@@ -29,7 +29,5 @@ registerGenerateEoaWallet(server); // Generate a brand-new Externally Owned Acco
 // registerMintNft(server); // Temporarily disabled
 // registerBridgeNft(server); // Temporarily disabled
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-    // Start as stdio server (best practice for FastMCP agents)
-    await server.start();
-} 
+// Start as stdio server (best practice for FastMCP agents)
+await server.start();

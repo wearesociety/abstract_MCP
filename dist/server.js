@@ -1323,15 +1323,13 @@ try {
 } catch (error) {
   console.log("No .env file found or failed to load - using environment variables from client");
 }
-var server = new FastMCP6({ name: "Society Abstract MCP", version: "0.1.3" });
+var server = new FastMCP6({ name: "Society Abstract MCP", version: "0.1.4" });
 registerAbDeployToken(server);
 registerGetBalance(server);
 registerTransferToken(server);
 registerAgwCreateWallet(server);
 registerGenerateEoaWallet(server);
-if (import.meta.url === `file://${process.argv[1]}`) {
-  await server.start();
-}
+await server.start();
 export {
   server
 };

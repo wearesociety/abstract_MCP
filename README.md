@@ -134,7 +134,7 @@ Generate a brand-new Externally Owned Account (EOA) with private key and address
   "mcpServers": {
     "society-abstract-mcp": {
       "command": "npx",
-      "args": ["-y", "society-abstract-mcp@latest"],
+      "args": ["-y", "society-abstract-mcp@0.1.4"],
       "env": {
         "ABSTRACT_PRIVATE_KEY": "your-private-key-here",
         "ABSTRACT_RPC_URL": "https://api.testnet.abs.xyz",
