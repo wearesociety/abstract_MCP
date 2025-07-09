@@ -79,11 +79,11 @@ function validateEnvironment(log: any): { rpcUrl: string; privateKey: string } {
     log.info("Validating environment variables");
 
     if (!rpcUrl) {
-        throw new UserError("RPC_URL or ABSTRACT_RPC_URL environment variable is required");
+        throw new UserError("ABSTRACT_RPC_URL or RPC_URL environment variable is required");
     }
 
     if (!privateKey) {
-        throw new UserError("PRIVATE_KEY or ABSTRACT_PRIVATE_KEY environment variable is required");
+        throw new UserError("ABSTRACT_PRIVATE_KEY or PRIVATE_KEY environment variable is required");
     }
 
     // Basic validation of private key format
@@ -220,7 +220,7 @@ FLOW
 - Returns the deployed contract address
 
 SECURITY / LIMITATIONS
-- Make sure the deployer wallet (PRIVATE_KEY / ABSTRACT_PRIVATE_KEY) has enough funds on the target network`,
+- Make sure the deployer wallet (ABSTRACT_PRIVATE_KEY / PRIVATE_KEY) has enough funds on the target network`,
         parameters: ParamsSchema,
         annotations: { destructiveHint: true, title: "Contract Deployment Tool" },
         execute: deployTokenToolExecute,

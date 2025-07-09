@@ -23,10 +23,10 @@ function validateEnvironment(log) {
   const privateKey = process.env.ABSTRACT_PRIVATE_KEY || process.env.PRIVATE_KEY;
   log.info("Validating environment variables");
   if (!rpcUrl) {
-    throw new UserError("RPC_URL or ABSTRACT_RPC_URL environment variable is required");
+    throw new UserError("ABSTRACT_RPC_URL or RPC_URL environment variable is required");
   }
   if (!privateKey) {
-    throw new UserError("PRIVATE_KEY or ABSTRACT_PRIVATE_KEY environment variable is required");
+    throw new UserError("ABSTRACT_PRIVATE_KEY or PRIVATE_KEY environment variable is required");
   }
   if (!privateKey.startsWith("0x") || privateKey.length !== 66) {
     throw new UserError("Invalid private key format. Must be 64 hex characters prefixed with 0x");
@@ -125,7 +125,7 @@ FLOW
 - Returns the deployed contract address
 
 SECURITY / LIMITATIONS
-- Make sure the deployer wallet (PRIVATE_KEY / ABSTRACT_PRIVATE_KEY) has enough funds on the target network`,
+- Make sure the deployer wallet (ABSTRACT_PRIVATE_KEY / PRIVATE_KEY) has enough funds on the target network`,
     parameters: ParamsSchema,
     annotations: { destructiveHint: true, title: "Contract Deployment Tool" },
     execute: deployTokenToolExecute
@@ -189,7 +189,10 @@ import { UserError as UserError2 } from "fastmcp";
 import { createPublicClient, createWalletClient, http, defineChain } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import dotenv from "dotenv";
-dotenv.config();
+try {
+  dotenv.config();
+} catch (error) {
+}
 var abstractTestnet = defineChain({
   id: 11124,
   name: "Abstract Testnet",
@@ -236,7 +239,7 @@ function getPublicClient() {
 }
 function getWalletClient() {
   if (!_walletClient) {
-    let pk = process.env.ABSTRACT_PRIVATE_KEY ?? process.env.ABSTRACT_PRIVATE_KEY;
+    let pk = process.env.ABSTRACT_PRIVATE_KEY ?? process.env.PRIVATE_KEY;
     if (!pk) {
       throw new Error("ABSTRACT_PRIVATE_KEY env variable is required");
     }
@@ -1313,7 +1316,11 @@ SECURITY
 }
 
 // src/server.ts
-dotenv2.config();
+try {
+  dotenv2.config();
+} catch (error) {
+  console.log("No .env file found or failed to load - using environment variables from client");
+}
 var server = new FastMCP6({ name: "Society Abstract MCP", version: "0.1.0" });
 registerAbDeployToken(server);
 registerGetBalance(server);

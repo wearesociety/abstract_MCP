@@ -10,7 +10,13 @@ import { registerGenerateEoaWallet } from "./tools/ab_generateEoaWallet.js";
 // import { registerMintNft } from "./tools/mintNft.js"; // Temporarily disabled
 // import { registerBridgeNft } from "./tools/bridgeNft.js"; // Temporarily disabled
 
-dotenv.config();
+// Load .env file if it exists (optional for development)
+try {
+    dotenv.config();
+} catch (error) {
+    // .env file is optional - all required variables should come from client
+    console.log("No .env file found or failed to load - using environment variables from client");
+}
 
 export const server = new FastMCP({ name: "Society Abstract MCP", version: "0.1.0" });
 
