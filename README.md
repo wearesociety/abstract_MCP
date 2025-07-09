@@ -5,8 +5,9 @@
   
   **FastMCP TypeScript server providing comprehensive wallet, token and smart contract utilities for Abstract Testnet/Mainnet**
   
+  ![Abstract](./assets/logo.jpg)
+
   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-  ![Abstract](https://img.shields.io/badge/Abstract-000000?style=for-the-badge&logo=ethereum&logoColor=white)
   ![FastMCP](https://img.shields.io/badge/FastMCP-FF6B6B?style=for-the-badge)
   
 </div>
