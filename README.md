@@ -4,7 +4,7 @@
   # Society Abstract MCP
   
   **FastMCP TypeScript server providing comprehensive wallet, token and smart contract utilities for Abstract Testnet/Mainnet**
-  
+
   ![Abstract](./assets/logo.jpg)
 
   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -256,9 +256,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🆘 Support
 
-- **Issues**: [GitHub Issues](https://github.com/your-org/society-abstract-mcp/issues)
+- **Issues**: [GitHub Issues](https://github.com/wearesociety/abstract_MCP/issues)
 - **Documentation**: This README and inline code documentation
-- **Community**: Join our [Discord](https://discord.gg/your-invite)
+- **Community**: Join our [Telegram](https://t.me/societyportal)
 
 ---
 
