@@ -1,6 +1,6 @@
 {
     "name": "society-abstract-mcp",
-    "version": "0.1.4",
+    "version": "0.1.3",
     "description": "FastMCP server for Abstract token, wallet and NFT operations",
     "type": "module",
     "main": "dist/server.js",
