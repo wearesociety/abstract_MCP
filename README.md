@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/abstract_mcp.png" alt="Abstract MCP Logo">
+  <img src="./assets/Abstract_MCP.jpg" alt="Abstract MCP Logo">
   
   # Society Abstract MCP
   
